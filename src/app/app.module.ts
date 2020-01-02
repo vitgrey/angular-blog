@@ -9,6 +9,9 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TableComponent } from './components/table/table.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { ComponentslineComponent } from './componentsline/componentsline.component';
+import { LineComponent } from './components/line/line.component';
+import { DoughnutComponent } from './components/doughnut/doughnut.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { SliderComponent } from './components/slider/slider.component';
     NavComponent,
     FooterComponent,
     TableComponent,
-    SliderComponent
+    SliderComponent,
+    ComponentslineComponent,
+    LineComponent,
+    DoughnutComponent
   ],
   imports: [
     BrowserModule,
