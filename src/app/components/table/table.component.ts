@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent {
 
-  headers = ["ID", "Name", "Age", "Gender", "Country"];
+  public headers: string[] = ["ID", "Name", "Age", "Gender", "Country"];
 
-  rows = [
+  public rows = [
     {
       "ID": "1",
       "Name": "Rahul",
