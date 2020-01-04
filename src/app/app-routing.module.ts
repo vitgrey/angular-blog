@@ -4,14 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { TableComponent } from './components/table/table.component';
-import { SliderComponent } from './components/slider/slider.component';
-
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { ListComponent } from './components/list/list.component';
 
 const routes: Routes = [
   { path: 'main', component: MainComponent },
   { path: 'articles', component: ArticlesComponent },
   { path: 'table', component: TableComponent },
-  { path: 'slider', component: SliderComponent },
+  { path: 'carousel', component: CarouselComponent },
+  { path: 'list', component: ListComponent },
   { path: '**', component: MainComponent }
 ];
 

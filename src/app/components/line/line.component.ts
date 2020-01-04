@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./line.component.scss'],
 })
 export class LineComponent {
-  public chartType: string = 'line';
+  public chartType = 'line';
 
   public chartDatasets: Array<any> = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset' },
