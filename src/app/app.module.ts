@@ -13,6 +13,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { LineComponent } from './components/line/line.component';
 import { DoughnutComponent } from './components/doughnut/doughnut.component';
 import { ListComponent } from './components/list/list.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,15 @@ import { ListComponent } from './components/list/list.component';
     CarouselComponent,
     LineComponent,
     DoughnutComponent,
-    ListComponent
+    ListComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],

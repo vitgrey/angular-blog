@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <form class="text-center w-50">
+
+    <p class="h4 mb-4">Sign up</p>
+
+    <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name"><br>
+    <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name"><br>
+    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password"
+      aria-describedby="defaultRegisterFormPasswordHelpBlock">
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+      At least 8 characters and 1 digit
+    </small>
+
+    <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+    <p>Have an account?
+      <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+    </p>
+
+  </form>
+</div>
