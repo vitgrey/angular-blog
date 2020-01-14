@@ -1,6 +1,6 @@
-export class UserModel {
+export class UserModelRegister {
   firstName: string;
-  lestName: string;
+  lastName: string;
   email: string;
   password: string;
 }

@@ -1,13 +1,27 @@
 <div class="wrapper">
-  <form class="text-center w-50">
+  <form class="text-center w-50" [formGroup]="form.formGroup">
 
     <p class="h4 mb-4">Sign up</p>
 
-    <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name"><br>
-    <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name"><br>
-    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
-    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password"
-      aria-describedby="defaultRegisterFormPasswordHelpBlock">
+    <input type="text" class="form-control mb-4" placeholder="First name" formControlName="firstName">
+    <small class="form-text text-muted mb-4"
+      *ngIf="form.formGroup.controls['firstName'].invalid && form.formGroup.controls['firstName'].touched">invalid
+      first name</small>
+
+    <input type="text" class="form-control mb-4" placeholder="Last name" formControlName="lastName">
+    <small class="form-text text-muted mb-4"
+      *ngIf="form.formGroup.controls['lastName'].invalid && form.formGroup.controls['lastName'].touched">invalid
+      last name</small>
+
+    <input type="email" class="form-control mb-4" placeholder="E-mail" formControlName="email">
+    <small class="form-text text-muted mb-4"
+      *ngIf="form.formGroup.controls['email'].invalid && form.formGroup.controls['email'].touched">invalid
+      email</small>
+
+    <input type="password" class="form-control mb-4" placeholder="Password" formControlName="password">
+    <small class="form-text text-muted mb-4"
+      *ngIf="form.formGroup.controls['password'].invalid && form.formGroup.controls['password'].touched">invalid
+      password</small>
 
     <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
 
