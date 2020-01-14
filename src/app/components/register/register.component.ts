@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModelRegister } from 'src/app/models/user-register.model';
-import { UserFormRegister } from 'src/app/models/user-register.form';
+import { UserFormRegister } from 'src/app/forms/user-register.form';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
 
   constructor() {
     this.model = new UserModelRegister();
-    this.form = new UserFormRegister(this.model)
+    this.form = new UserFormRegister(this.model);
   }
 
   ngOnInit() {

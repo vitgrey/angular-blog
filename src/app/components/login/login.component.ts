@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModelLogin } from 'src/app/models/user-login.model';
-import { UserFormLogin } from 'src/app/models/user-login.form';
+import { UserFormLogin } from 'src/app/forms/user-login.form';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +10,10 @@ import { UserFormLogin } from 'src/app/models/user-login.form';
 export class LoginComponent implements OnInit {
   private model: UserModelLogin;
   public form: UserFormLogin;
-  
+
   constructor() {
     this.model = new UserModelLogin();
-    this.form = new UserFormLogin(this.model)
+    this.form = new UserFormLogin(this.model);
   }
 
   ngOnInit() {

@@ -1,5 +1,5 @@
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { UserModelRegister } from './user-register.model';
+import { UserModelRegister } from 'src/app/models/user-register.model';
 
 export class UserFormRegister {
   private formBuilder: FormBuilder;
@@ -9,7 +9,7 @@ export class UserFormRegister {
   constructor(model: UserModelRegister) {
     this.formBuilder = new FormBuilder();
     this.model = model;
-    this.createForm()
+    this.createForm();
   }
 
 
@@ -19,6 +19,6 @@ export class UserFormRegister {
       lastName: new FormControl(this.model.lastName, Validators.required),
       email: new FormControl(this.model.email, [Validators.required, Validators.email]),
       password: new FormControl(this.model.password, Validators.required),
-    })
+    });
   }
 }
