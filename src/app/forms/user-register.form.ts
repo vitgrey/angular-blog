@@ -1,5 +1,5 @@
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { UserModelRegister } from 'src/app/models/user-register.model';
+import { UserModelRegister } from 'src/app/models/user-register';
 
 export class UserFormRegister {
   private formBuilder: FormBuilder;

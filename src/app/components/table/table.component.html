@@ -1,12 +1,12 @@
 <table class="table">
 
   <tr class="bg-dark text-white">
-    <th *ngFor="let column of headers">{{column}}</th>
+    <th *ngFor="let header of headers">{{header.title}}</th>
   </tr>
 
-  <tr *ngFor="let row of rows">
-    <td *ngFor="let column of headers">
-      {{row[column]}}
+  <tr *ngFor="let people of peoples">
+    <td *ngFor="let header of headers">
+      
     </td>
   </tr>
 

@@ -1,5 +1,5 @@
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { UserModelLogin } from 'src/app/models/user-login.model';
+import { UserModelLogin } from 'src/app/models/user-login';
 
 export class UserFormLogin {
   private formBuilder: FormBuilder;

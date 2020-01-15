@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModelRegister } from 'src/app/models/user-register.model';
+import { UserModelRegister } from 'src/app/models/user-register';
 import { UserFormRegister } from 'src/app/forms/user-register.form';
 
 @Component({
