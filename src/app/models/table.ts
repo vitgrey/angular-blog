@@ -7,5 +7,5 @@ export class People {
 }
 
 export class Header {
-  title: string[];
+  title: string;
 }

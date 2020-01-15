@@ -2,7 +2,19 @@ import { People, Header } from 'src/app/models/table';
 
 export const HEADERS: Header[] = [
   {
-    title: ['id', 'name', 'age', 'gender', 'country']
+    title: 'id'
+  },
+  {
+    title: 'name'
+  },
+  {
+    title: 'age'
+  },
+  {
+    title: 'gender'
+  },
+  {
+    title: 'country'
   }
 ]
 
