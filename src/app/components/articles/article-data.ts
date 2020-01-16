@@ -32,4 +32,4 @@ export const ARTICLES: ArticlesModel[] = [
     Fugiat, iste blanditiis neque itaque quidem tempora quos.Fuga itaque doloremque iusto.`
   },
 
-]
+];

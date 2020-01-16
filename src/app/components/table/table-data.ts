@@ -1,6 +1,6 @@
-import { People, Header } from 'src/app/models/table';
+import { PeopleModel, HeaderModel } from 'src/app/models/table';
 
-export const HEADERS: Header[] = [
+export const HEADERS: HeaderModel[] = [
   {
     title: 'id'
   },
@@ -16,9 +16,9 @@ export const HEADERS: Header[] = [
   {
     title: 'country'
   }
-]
+];
 
-export const PEOPLES: People[] = [
+export const PEOPLES: PeopleModel[] = [
   {
     id: '1',
     name: 'Rahul',
@@ -75,4 +75,4 @@ export const PEOPLES: People[] = [
     gender: 'Female',
     country: 'France'
   }
-]
+];

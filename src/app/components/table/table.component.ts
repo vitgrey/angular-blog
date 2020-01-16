@@ -9,8 +9,8 @@ import { PEOPLES } from './table-data';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
-  public headers = HEADERS
-  public peoples = PEOPLES
+  public headers = HEADERS;
+  public peoples = PEOPLES;
 
   constructor() { }
 

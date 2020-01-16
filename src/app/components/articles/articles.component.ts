@@ -7,7 +7,7 @@ import { ARTICLES } from './article-data';
   styleUrls: ['./articles.component.scss']
 })
 export class ArticlesComponent implements OnInit {
-  public articles = ARTICLES
+  public articles = ARTICLES;
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-export class People {
+export class PeopleModel {
   id: string;
   name: string;
   age: string;
@@ -6,6 +6,6 @@ export class People {
   country: string;
 }
 
-export class Header {
+export class HeaderModel {
   title: string;
 }

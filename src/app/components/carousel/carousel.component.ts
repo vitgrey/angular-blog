@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CAROUSEL } from './carousel-data';
 
 @Component({
   selector: 'app-carousel',
@@ -7,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
-  public sources: string[] = ['https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg',
-    'https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg',
-    'https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg'];
+  public sources = CAROUSEL;
 
   constructor() { }
 
