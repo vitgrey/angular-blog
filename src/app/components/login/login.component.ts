@@ -28,23 +28,21 @@ export class LoginComponent implements OnInit {
     this.form = new UserFormLogin(this.model);
 
     if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/'])
+      this.router.navigate(['/']);
     }
   }
 
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
-  //get return url from route parameters or default tj '/'
+  // get return url from route parameters or default '/'
   get formGetter() {
     return this.form.formGroup.controls;
   }
 
   onSubmit() {
-    this.loading = true
-    this.cookieService.set('email', this.formGetter.email.value)
-    this.cookieService.set('password', this.formGetter.password.value)
+    this.loading = true;
     this.authenticationService.login(this.formGetter.email.value, this.formGetter.password.value)
       .pipe(first())
       .subscribe(
@@ -54,6 +52,6 @@ export class LoginComponent implements OnInit {
         error => {
           this.loading = false;
         }
-      )
+      );
   }
 }

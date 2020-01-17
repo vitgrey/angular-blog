@@ -8,7 +8,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { ListComponent } from './components/list/list.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { AuthGuard } from 'src/app/guards/auth.guard'
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: MainComponent, canActivate: [AuthGuard] },

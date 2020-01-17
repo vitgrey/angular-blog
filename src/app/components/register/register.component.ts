@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
     this.form = new UserFormRegister(this.model);
 
     if (this.authenticationservice.currentUserValue) {
-      this.router.navigate(['/'])
+      this.router.navigate(['/']);
     }
   }
 
@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    this.loading = true
+    this.loading = true;
     this.userservice.register(this.form.formGroup.value)
       .pipe(first())
       .subscribe(
@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
         error => {
           this.loading = false;
         }
-      )
+      );
   }
 
 }
