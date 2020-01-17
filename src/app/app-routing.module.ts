@@ -14,10 +14,10 @@ const routes: Routes = [
   { path: '', component: MainComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'articles', component: ArticlesComponent },
-  { path: 'table', component: TableComponent },
-  { path: 'carousel', component: CarouselComponent },
-  { path: 'list', component: ListComponent },
+  { path: 'articles', component: ArticlesComponent, canActivate: [AuthGuard] },
+  { path: 'table', component: TableComponent, canActivate: [AuthGuard] },
+  { path: 'carousel', component: CarouselComponent, canActivate: [AuthGuard] },
+  { path: 'list', component: ListComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];
 

@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand navbar-dark bg-dark">
+<div class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
   <a class="navbar-brand" href="#">Project name</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
     aria-label="Toggle navigation">
@@ -23,5 +23,8 @@
         <a class="nav-link" routerLink="/articles" routerLinkActive="active-link">Articles</a>
       </li>
     </ul>
+    <div class="nav-item active logout">
+      <a class="nav-link" (click)="logout()">Logout</a>
+    </div>
   </div>
 </div>

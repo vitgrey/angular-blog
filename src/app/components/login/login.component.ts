@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserModelLogin } from 'src/app/models/user-login';
 import { UserFormLogin } from 'src/app/forms/user-login.form';
 import { first } from 'rxjs/operators';
+import { CookieService } from 'ngx-cookie-service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -20,12 +21,13 @@ export class LoginComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationservice: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private cookieService: CookieService
   ) {
     this.model = new UserModelLogin();
     this.form = new UserFormLogin(this.model);
 
-    if (this.authenticationservice.currentUserValue) {
+    if (this.authenticationService.currentUserValue) {
       this.router.navigate(['/'])
     }
   }
@@ -41,7 +43,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.loading = true
-    this.authenticationservice.login(this.formGetter.email.value, this.formGetter.password.value)
+    this.cookieService.set('email', this.formGetter.email.value)
+    this.cookieService.set('password', this.formGetter.password.value)
+    this.authenticationService.login(this.formGetter.email.value, this.formGetter.password.value)
       .pipe(first())
       .subscribe(
         data => {

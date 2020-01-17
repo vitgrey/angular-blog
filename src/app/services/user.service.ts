@@ -11,6 +11,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   register(user: UserModel) {
-    return this.http.post(`${this.api.apiUrl}/users/register`, user)
+    return this.http.post(`${this.api.apiUrl}/registration`, user)
   }
 }
