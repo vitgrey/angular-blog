@@ -3,7 +3,7 @@ import { UserModelLogin } from 'src/app/models/user-login';
 
 export class UserFormLogin {
   private formBuilder: FormBuilder;
-  private formGroup: FormGroup;
+  public formGroup: FormGroup;
   public model: UserModelLogin;
 
   constructor(model: UserModelLogin) {

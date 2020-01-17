@@ -8,7 +8,7 @@ import { DOUGHNUT } from './doughnut';
 })
 export class DoughnutComponent {
 
-  public doughnut = DOUGHNUT
+  public doughnut = DOUGHNUT;
 
   public chartOptions: any = {
     responsive: true

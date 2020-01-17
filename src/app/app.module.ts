@@ -16,6 +16,7 @@ import { ListComponent } from './components/list/list.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],

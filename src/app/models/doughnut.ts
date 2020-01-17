@@ -1,4 +1,4 @@
-export class ChartModel {
+export class DoughnutModel {
   chartType: string;
   chartDatasets: { data: number[]; label: string }[];
   chartLabels: string[];

@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <form class="text-center w-50" [formGroup]="form.formGroup">
+  <form class="text-center w-50" [formGroup]="form.formGroup" (ngSubmit)="onSubmit()">
 
     <p class="h4 mb-4">Sign up</p>
 
@@ -18,12 +18,17 @@
       *ngIf="form.formGroup.controls['email'].invalid && form.formGroup.controls['email'].touched">invalid
       email</small>
 
+    <input type="tel" class="form-control mb-4" placeholder="Phone" formControlName="phone">
+    <small class="form-text text-muted mb-4"
+      *ngIf="form.formGroup.controls['phone'].invalid && form.formGroup.controls['phone'].touched">invalid
+      phone</small>
+
     <input type="password" class="form-control mb-4" placeholder="Password" formControlName="password">
     <small class="form-text text-muted mb-4"
       *ngIf="form.formGroup.controls['password'].invalid && form.formGroup.controls['password'].touched">invalid
       password</small>
 
-    <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+    <button class="btn btn-info my-4 btn-block" type="submit" [disabled]="loading">Sign up</button>
 
     <p>Have an account?
       <a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
