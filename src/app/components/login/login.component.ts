@@ -3,7 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserModelLogin } from 'src/app/models/user-login';
 import { UserFormLogin } from 'src/app/forms/user-login.form';
 import { first } from 'rxjs/operators';
-import { CookieService } from 'ngx-cookie-service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -15,14 +14,12 @@ export class LoginComponent implements OnInit {
   private model: UserModelLogin;
   public form: UserFormLogin;
 
-  loading = false;
-  returnUrl: string;
+  public returnUrl: string;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService,
-    private cookieService: CookieService
+    private authenticationService: AuthenticationService
   ) {
     this.model = new UserModelLogin();
     this.form = new UserFormLogin(this.model);
@@ -37,21 +34,14 @@ export class LoginComponent implements OnInit {
   }
 
   // get return url from route parameters or default '/'
-  get formGetter() {
+  public get formGetter() {
     return this.form.formGroup.controls;
   }
 
   onSubmit() {
-    this.loading = true;
     this.authenticationService.login(this.formGetter.email.value, this.formGetter.password.value)
       .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.loading = false;
-        }
+      .subscribe(data => this.router.navigate([this.returnUrl])
       );
   }
 }

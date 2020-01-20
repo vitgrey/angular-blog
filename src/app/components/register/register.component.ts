@@ -15,22 +15,20 @@ export class RegisterComponent implements OnInit {
   private model: UserModelRegister;
   public form: UserFormRegister;
 
-  loading = false;
-
   constructor(
     private router: Router,
-    private authenticationservice: AuthenticationService,
-    private userservice: UserService
+    private authenticationService: AuthenticationService,
+    private userService: UserService
   ) {
     this.model = new UserModelRegister();
     this.form = new UserFormRegister(this.model);
 
-    if (this.authenticationservice.currentUserValue) {
+    if (this.authenticationService.currentUserValue) {
       this.router.navigate(['/']);
     }
   }
 
-  get formGetter() {
+  public get formGetter() {
     return this.form.formGroup.controls;
   }
 
@@ -38,17 +36,9 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    this.loading = true;
-    this.userservice.register(this.form.formGroup.value)
+    this.userService.register(this.form.formGroup.value)
       .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate(['/login']);
-        },
-        error => {
-          this.loading = false;
-        }
+      .subscribe(data => this.router.navigate(['/login'])
       );
   }
-
 }

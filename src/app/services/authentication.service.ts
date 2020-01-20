@@ -5,13 +5,12 @@ import { map } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
 
 import { UserModel } from 'src/app/models/user';
-import { API } from './api.config';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  public api = API;
   private currentUserSubject: BehaviorSubject<UserModel>;
   public currentUser: Observable<UserModel>;
 
@@ -28,8 +27,8 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
-  login(email: string, password: string) {
-    return this.http.post<any>(`${this.api.apiUrl}/login`, { email, password })
+  public login(email: string, password: string) {
+    return this.http.post<any>(`${environment.apiUrl}/login`, { email, password })
       .pipe(map(user => {
         if (user && user.token) {
           this.cookie.set('currentUser', JSON.stringify(user));
@@ -38,7 +37,7 @@ export class AuthenticationService {
         return user;
       }));
   }
-  logout() {
+  public logout() {
     this.cookie.delete('currentUser');
     this.currentUserSubject.next(null);
   }

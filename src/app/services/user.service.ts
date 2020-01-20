@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { API } from './api.config';
+import { environment } from 'src/environments/environment';
 import { UserModel } from 'src/app/models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  public api = API;
+
   constructor(private http: HttpClient) { }
 
-  register(user: UserModel) {
-    return this.http.post(`${this.api.apiUrl}/registration`, user);
+  public register(user: UserModel) {
+    return this.http.post(`${environment.apiUrl}/registration`, user);
   }
 }

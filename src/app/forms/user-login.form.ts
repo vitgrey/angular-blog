@@ -15,7 +15,7 @@ export class UserFormLogin {
   public createForm() {
     this.formGroup = this.formBuilder.group({
       email: new FormControl(this.model.email, [Validators.required, Validators.email]),
-      password: new FormControl(this.model.password, [Validators.required, Validators.minLength(8)]),
+      password: new FormControl(this.model.password, [Validators.required, Validators.pattern('[0-9]{8}')]),
     });
   }
 }

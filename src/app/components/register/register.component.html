@@ -6,7 +6,7 @@
     <input type="text" class="form-control mb-4" placeholder="First name" formControlName="firstName">
     <small class="form-text text-muted mb-4"
       *ngIf="form.formGroup.controls['firstName'].invalid && form.formGroup.controls['firstName'].touched">
-      first name is required</small>
+      first name required</small>
     <small class="form-text text-muted mb-4"
       *ngIf="formGetter.firstName.errors && form.formGroup.controls['firstName'].dirty">
       First name must be at 5 characters minimum</small>
@@ -14,7 +14,7 @@
     <input type="text" class="form-control mb-4" placeholder="Last name" formControlName="lastName">
     <small class="form-text text-muted mb-4"
       *ngIf="form.formGroup.controls['lastName'].invalid && form.formGroup.controls['lastName'].touched">
-      last name is required</small>
+      last name required</small>
     <small class="form-text text-muted mb-4"
       *ngIf="formGetter.lastName.errors && form.formGroup.controls['lastName'].dirty">
       Last name must be at 5 characters minimum</small>
@@ -22,24 +22,24 @@
     <input type="email" class="form-control mb-4" placeholder="E-mail" formControlName="email">
     <small class="form-text text-muted mb-4"
       *ngIf="form.formGroup.controls['email'].invalid && form.formGroup.controls['email'].touched">
-      email is required</small>
+      email required</small>
     <small class="form-text text-muted mb-4" *ngIf="formGetter.email.errors && form.formGroup.controls['email'].dirty">
       Email must be a valid email address (example@mail.com)</small>
 
     <input type="tel" class="form-control mb-4" placeholder="Phone" formControlName="phone">
     <small class="form-text text-muted mb-4"
       *ngIf="form.formGroup.controls['phone'].invalid && form.formGroup.controls['phone'].touched">
-      phone is required</small>
+      phone required</small>
     <small class="form-text text-muted mb-4" *ngIf="formGetter.phone.errors && form.formGroup.controls['phone'].dirty">
       Phone must be a valid phone number (0631234567)</small>
 
     <input type="password" class="form-control mb-4" placeholder="Password" formControlName="password">
     <small class="form-text text-muted mb-4"
       *ngIf="form.formGroup.controls['password'].invalid && form.formGroup.controls['password'].touched">
-      password is required</small>
+      password required</small>
     <small class="form-text text-muted mb-4"
       *ngIf="formGetter.password.errors && form.formGroup.controls['password'].dirty">
-      Password must be at least 8 characters</small>
+      Password must be 8 numbers</small>
 
     <button class="btn btn-info my-4 btn-block" type="submit" [disabled]="form.formGroup.invalid">Sign up</button>
 
