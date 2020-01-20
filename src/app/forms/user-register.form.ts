@@ -14,11 +14,11 @@ export class UserFormRegister {
 
   public createForm() {
     this.formGroup = this.formBuilder.group({
-      firstName: new FormControl(this.model.firstName, Validators.required),
-      lastName: new FormControl(this.model.lastName, Validators.required),
+      firstName: new FormControl(this.model.firstName, [Validators.required, Validators.pattern("[a-zA-Z ]{5}")]),
+      lastName: new FormControl(this.model.lastName, [Validators.required, Validators.pattern("[a-zA-Z ]{5}")]),
       email: new FormControl(this.model.email, [Validators.required, Validators.email]),
-      phone: new FormControl(this.model.phone, Validators.required),
-      password: new FormControl(this.model.password, Validators.required),
+      phone: new FormControl(this.model.phone, [Validators.required, Validators.pattern("[0-9]{10}")]),
+      password: new FormControl(this.model.password, [Validators.required, Validators.minLength(8)])
     });
   }
 }

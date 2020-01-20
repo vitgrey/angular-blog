@@ -31,7 +31,6 @@ export class AuthenticationService {
   login(email: string, password: string) {
     return this.http.post<any>(`${this.api.apiUrl}/login`, { email, password })
       .pipe(map(user => {
-        console.log(user);
         if (user && user.token) {
           this.cookie.set('currentUser', JSON.stringify(user));
           this.currentUserSubject.next(user);

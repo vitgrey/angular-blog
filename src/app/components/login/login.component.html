@@ -6,11 +6,18 @@
     <input type="email" class="form-control mb-4" placeholder="E-mail" formControlName="email">
     <small class="form-text text-muted mb-4"
       *ngIf="form.formGroup.controls['email'].invalid && form.formGroup.controls['email'].touched">invalid email</small>
+    <small class="form-text text-muted mb-4" *ngIf="formGetter.email.errors && form.formGroup.controls['email'].dirty">
+      Email must be a valid email address (example@mail.com)</small>
+
     <input type="password" class="form-control mb-4" placeholder="Password" formControlName="password">
     <small class="form-text text-muted mb-4"
       *ngIf="form.formGroup.controls['password'].invalid && form.formGroup.controls['password'].touched">invalid
       password</small>
-    <button class="btn btn-info btn-block my-4" type="submit" [disabled]="loading">Sign in</button>
+    <small class="form-text text-muted mb-4"
+      *ngIf="formGetter.password.errors && form.formGroup.controls['password'].dirty">
+      Password must be at least 8 characters</small>
+
+    <button class="btn btn-info btn-block my-4" type="submit" [disabled]="form.formGroup.invalid">Sign in</button>
 
     <p>Not a member?
       <a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a>
