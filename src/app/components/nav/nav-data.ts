@@ -2,7 +2,7 @@ import { NavModel } from 'src/app/models/nav';
 
 export const NAVS: NavModel[] = [
   {
-    name: 'Main',
+    name: 'Dashboard',
     routerLink: '/main'
   },
   {
@@ -19,7 +19,6 @@ export const NAVS: NavModel[] = [
   },
   {
     name: 'Articles',
-    routerLink: '/articles'
+    routerLink: '/show-post'
   },
-
 ];

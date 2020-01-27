@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
-import { ArticlesComponent } from './components/articles/articles.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TableComponent } from './components/table/table.component';
@@ -19,11 +18,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ArticlesComponent,
     NavComponent,
     FooterComponent,
     TableComponent,

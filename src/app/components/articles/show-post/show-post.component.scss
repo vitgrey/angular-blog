@@ -1,0 +1,113 @@
+.container {
+  margin-top: 3vh;
+}
+
+.icon {
+  float: right;
+}
+
+.pagination {
+  float: right;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 3vh;
+}
+
+.search {
+  width: 40vw;
+}
+
+.add button {
+  width: 15vw;
+}
+
+.background {
+  background: rgba(241, 241, 241, 0.753);
+}
+
+span {
+  float: right;
+}
+
+.img img {
+  opacity: 0.97;
+  display: block;
+  margin: 0 auto;
+  width: 73vw;
+  height: 65vh;
+}
+
+.button {
+  margin-top: 2vh;
+  margin-right: 2vh;
+  font-size: 1.2vw;
+  float: right;
+}
+
+.article {
+  border-radius: 10px;
+  padding: 2vh;
+  margin: 2vh;
+  height: 105vh;
+  width: 80vw;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.7vw;
+  font-weight: bold;
+}
+
+.content {
+  padding-left: 1vw;
+  padding-right: 1vw;
+  font-size: 1.2vw;
+}
+
+.box {
+  overflow: hidden;
+  height: 15vh;
+  width: 75vw;
+  line-height: 3vh;
+}
+
+.box:before {
+  content: "";
+  float: left;
+  width: 5px;
+  height: 15.3vh;
+}
+
+.box > *:first-child {
+  float: right;
+  width: 100%;
+  margin-left: -5px;
+}
+
+.img {
+  padding-bottom: 2vh;
+}
+
+.box:after {
+  content: "\02026";
+  box-sizing: content-box;
+  float: right;
+  position: relative;
+  top: -25px;
+  left: 100%;
+  width: 3em;
+  margin-left: -3em;
+  padding-right: 5px;
+  text-align: right;
+  background-size: 100% 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    white 50%,
+    white
+  );
+}

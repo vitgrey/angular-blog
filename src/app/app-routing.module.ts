@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent } from './components/main/main.component';
-import { ArticlesComponent } from './components/articles/articles.component';
 import { TableComponent } from './components/table/table.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ListComponent } from './components/list/list.component';
@@ -14,10 +13,19 @@ const routes: Routes = [
   { path: '', component: MainComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'articles', component: ArticlesComponent, canActivate: [AuthGuard] },
   { path: 'table', component: TableComponent, canActivate: [AuthGuard] },
   { path: 'carousel', component: CarouselComponent, canActivate: [AuthGuard] },
   { path: 'list', component: ListComponent, canActivate: [AuthGuard] },
+  {
+    path: 'show-post',
+    loadChildren: () => import('./components/articles/show-post/show-post.module').then(mod => mod.ArticleShowModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'change-post',
+    loadChildren: () => import('./components/articles/change-post/change-post.module').then(mod => mod.ArticleChangeModule),
+    canActivate: [AuthGuard]
+  },
   { path: '**', redirectTo: '' }
 ];
 

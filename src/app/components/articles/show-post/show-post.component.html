@@ -1,0 +1,76 @@
+<!-- Add button & search-->
+
+<div class="wrapper container">
+  <div class="search">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="query">
+  </div>
+  <div class="add">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+      (click)="onClickAddArticle()">Add</button>
+  </div>
+</div>
+
+<!--Article list-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" *ngFor="let article of articles | search : query">
+
+      <div class="background article">
+        <span>id: {{article.id}}</span><br>
+
+        <div class="icon">
+          <i title=" Edit" class="fas fa-edit" aria-hidden="true" data-toggle="modal" data-target="#exampleModalChange"
+            (click)="onClickEditArticleDetail(article.id)"></i><br>
+          <i title="Delete" class="fas fa-trash-alt" aria-hidden="true" data-toggle="modal"
+            (click)="onClickArticleDelete(article.id)"></i>
+        </div>
+
+        <a class="img">
+          <img src="../../../assets/{{article.source.substring(12,32)}}" alt="picture">
+        </a>
+
+        <p class="title">{{article.title}}</p>
+
+        <div class="box">
+          <div>
+            <p class="content">{{article.content}}</p>
+          </div>
+        </div>
+
+        <button type="button" class="button btn btn-secondary" data-toggle="modal" data-target="#ReadModal"
+          (click)="onClickReadArticle(article.id)">
+          Read more...
+        </button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="ReadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Article</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <p class="title">{{articleDetail.title}}</p>
+              <p class="content">{{articleDetail.content}}</p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="pagination card-footer pb-0 pt-3">
+      <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+  </div>
+</div>

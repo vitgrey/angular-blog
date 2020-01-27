@@ -13,6 +13,7 @@ export class DoughnutComponent {
   public chartOptions: any = {
     responsive: true
   };
+
   public chartClicked(e: any): void { }
   public chartHovered(e: any): void { }
 }
