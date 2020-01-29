@@ -18,6 +18,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
+import { ArticleChangeModule } from 'src/app/components/articles/change-post/change-post.module';
+import { ArticleShowModule } from 'src/app/components/articles/show-post/show-post.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { CookieService } from 'ngx-cookie-service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    ArticleChangeModule,
+    ArticleShowModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

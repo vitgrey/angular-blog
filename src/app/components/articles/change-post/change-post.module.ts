@@ -12,6 +12,7 @@ import { ArticlesService } from 'src/app/services/articles.service';
     FormsModule,
     ChangePostRoutingModule
   ],
+  exports: [ChangePostComponent],
   declarations: [ChangePostComponent],
   providers: [ArticlesService]
 })
