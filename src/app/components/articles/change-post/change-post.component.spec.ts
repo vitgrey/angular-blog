@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ArticlesService } from 'src/app/services/articles.service';
 import { ChangePostComponent } from './change-post.component';
+import { FormsModule } from '@angular/forms';
 
 describe('ChangePostComponent', () => {
   let component: ChangePostComponent;
@@ -8,7 +9,9 @@ describe('ChangePostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChangePostComponent ]
+      imports: [ FormsModule ],
+      declarations: [ ChangePostComponent ],
+      providers: [ArticlesService]
     })
     .compileComponents();
   }));
