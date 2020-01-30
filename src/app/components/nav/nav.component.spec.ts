@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CookieService } from 'ngx-cookie-service';
 
 import { NavComponent } from './nav.component';
 
@@ -9,8 +11,12 @@ describe('NavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [NavComponent]
+      imports: [RouterTestingModule,
+        HttpClientTestingModule],
+      declarations: [NavComponent],
+      providers: [
+        CookieService
+      ]
     })
       .compileComponents();
   }));

@@ -23,7 +23,7 @@ export class ArticlesService {
   getArticleById(id: number): ArticlesModel {
     const articleArray = JSON.parse(localStorage.getItem('localData'));
     return articleArray
-      .filter(todo => todo.id === id)
+      .filter(article => article.id === id)
       .pop();
   }
 
