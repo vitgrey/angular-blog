@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ArticlesService } from 'src/app/services/articles.service';
+import { ArticlesService } from 'src/app/services/articles/articles.service';
 import { ChangePostComponent } from './change-post.component';
 import { FormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';

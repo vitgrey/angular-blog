@@ -3,9 +3,8 @@ import { UserModelRegister } from 'src/app/models/user-register';
 import { UserFormRegister } from 'src/app/forms/user-register.form';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { AuthenticationService } from 'src/app/services/authentication.service';
-import { UserService } from 'src/app/services/user.service';
-
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-register',
@@ -29,14 +28,14 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  public get formGetter() {
+  public get formGetter(): any {
     return this.form.formGroup.controls;
   }
 
   ngOnInit() {
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.userService.register(this.form.formGroup.value)
       .pipe(first())
       .subscribe(data => this.router.navigate(['/login'])

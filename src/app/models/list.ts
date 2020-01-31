@@ -1,3 +1,3 @@
 export class ListModel {
-  content: string;
+  text: string;
 }

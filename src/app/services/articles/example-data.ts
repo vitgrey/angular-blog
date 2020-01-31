@@ -1,4 +1,4 @@
-import { ArticlesModel } from '../models/article';
+import { ArticlesModel } from '../../models/article';
 
 export const EXAMPLE: ArticlesModel[] = [
   {

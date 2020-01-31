@@ -17,9 +17,10 @@ import { TableComponent } from './components/table/table.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { LineComponent } from './components/main/line/line.component';
 import { DoughnutComponent } from './components/main/doughnut/doughnut.component';
-import { ListComponent } from './components/list/list.component';
+import { ShowListComponent } from './components/list/show-list/show-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AddListComponent } from './components/list/add-list/add-list.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +32,10 @@ import { RegisterComponent } from './components/register/register.component';
     CarouselComponent,
     LineComponent,
     DoughnutComponent,
-    ListComponent,
+    ShowListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddListComponent
   ],
   imports: [
     BrowserModule,

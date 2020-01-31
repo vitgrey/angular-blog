@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ShowPostRoutingModule } from './show-post-routing.module';
 import { ShowPostComponent } from './show-post.component';
-import { ArticlesService } from 'src/app/services/articles.service';
+import { ArticlesService } from 'src/app/services/articles/articles.service';
 import { SearchPipe } from './../../../pipes/search.pipe';
 import { JwPaginationComponent } from 'jw-angular-pagination';
 

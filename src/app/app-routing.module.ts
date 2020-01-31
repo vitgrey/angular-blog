@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { TableComponent } from './components/table/table.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { ListComponent } from './components/list/list.component';
+import { ShowListComponent } from './components/list/show-list/show-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from 'src/app/guards/auth.guard';
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'table', component: TableComponent, canActivate: [AuthGuard] },
   { path: 'carousel', component: CarouselComponent, canActivate: [AuthGuard] },
-  { path: 'list', component: ListComponent, canActivate: [AuthGuard] },
+  { path: 'list', component: ShowListComponent, canActivate: [AuthGuard] },
   {
     path: 'show-post',
     loadChildren: () => import('./components/articles/show-post/show-post.module').then(mod => mod.ArticleShowModule),

@@ -1,0 +1,11 @@
+<div class="wrapper container">
+  <div class="input">
+    <form (ngSubmit)="onSubmit()">
+      <input class="form-control" (blur)="addInput(newInput.value); newInput.value='' "
+        placeholder="Enter new list item..." #newInput>
+    </form>
+  </div>
+  <div class="add">
+    <button (click)="addInput(newInput.value)" class="btn btn-primary">Add</button>
+  </div>
+</div>

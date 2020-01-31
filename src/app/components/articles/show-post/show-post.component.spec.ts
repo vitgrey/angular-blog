@@ -1,4 +1,4 @@
-import { ArticlesService } from 'src/app/services/articles.service';
+import { ArticlesService } from 'src/app/services/articles/articles.service';
 import { SearchPipe } from './../../../pipes/search.pipe';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';

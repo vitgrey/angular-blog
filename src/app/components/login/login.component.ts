@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UserModelLogin } from 'src/app/models/user-login';
 import { UserFormLogin } from 'src/app/forms/user-login.form';
 import { first } from 'rxjs/operators';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -34,11 +34,11 @@ export class LoginComponent implements OnInit {
   }
 
   // get return url from route parameters or default '/'
-  public get formGetter() {
+  public get formGetter(): any {
     return this.form.formGroup.controls;
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.authenticationService.login(this.formGetter.email.value, this.formGetter.password.value)
       .pipe(first())
       .subscribe(data => this.router.navigate([this.returnUrl])

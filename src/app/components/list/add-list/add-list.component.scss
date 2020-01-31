@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 3vh;
+}
+
+.input {
+  width: 40vw;
+}
+
+.add button {
+  width: 15vw;
+}
