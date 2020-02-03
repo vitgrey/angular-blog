@@ -3,12 +3,15 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CookieService } from 'ngx-cookie-service';
-
+import { BrowserModule, By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
 import { RegisterComponent } from './register.component';
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
+  let de: DebugElement;
+  let el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -16,7 +19,8 @@ describe('RegisterComponent', () => {
       imports: [
         RouterTestingModule.withRoutes([]),
         ReactiveFormsModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        BrowserModule
       ],
       providers: [
         CookieService
@@ -28,10 +32,25 @@ describe('RegisterComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(RegisterComponent);
     component = fixture.componentInstance;
+    de = fixture.debugElement.query(By.css('form'));
+    el = de.nativeElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should submit', () => {
+    component.onSubmit();
+    expect('test element').toEqual('test element');
+  });
+
+  it('should call submit method', () => {
+    fixture.detectChanges();
+    spyOn<any>(component, 'onSubmit');
+    el = fixture.debugElement.query(By.css('button')).nativeElement;
+    el.click();
+    expect(component.onSubmit).toHaveBeenCalledTimes(0);
   });
 });

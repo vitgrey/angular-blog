@@ -23,32 +23,32 @@ export class ShowPostComponent implements OnInit {
     this.loadAllArticleList();
   }
 
-  onChangePage(articles) {
+  onChangePage(articles): void {
     this.articles = articles;
   }
 
-  loadAllArticleList() {
+  loadAllArticleList(): void {
     this.articles = this.articlesService.getAllArticles();
   }
 
-  onClickEditArticleDetail(id) {
+  onClickEditArticleDetail(id): void {
     this.router.navigate(['/change-post'], { queryParams: { id } });
   }
 
-  onClickArticleDelete(id) {
+  onClickArticleDelete(id): void {
     this.articlesService.deleteArticleDetail(id);
     this.loadAllArticleList();
   }
 
-  onClickAddArticle() {
+  onClickAddArticle(): void {
     this.router.navigate(['/change-post']);
   }
 
-  getArticleDetailById(id) {
+  getArticleDetailById(id): void {
     this.articleDetail = this.articlesService.getArticleById(parseInt(id, 10));
   }
 
-  onClickReadArticle(id) {
+  onClickReadArticle(id): void {
     this.articleId = id;
     this.getArticleDetailById(this.articleId);
   }
