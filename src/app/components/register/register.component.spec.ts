@@ -53,4 +53,22 @@ describe('RegisterComponent', () => {
     el.click();
     expect(component.onSubmit).toHaveBeenCalledTimes(0);
   });
+
+  it('form invalid', () => {
+    component.form.formGroup.controls.firstName.setValue('');
+    component.form.formGroup.controls.lastName.setValue('');
+    component.form.formGroup.controls.email.setValue('');
+    component.form.formGroup.controls.phone.setValue('');
+    component.form.formGroup.controls.password.setValue('');
+    expect(component.form.formGroup.valid).toBeFalsy();
+  });
+
+  it('form valid', () => {
+    component.form.formGroup.controls.firstName.setValue('Tests');
+    component.form.formGroup.controls.lastName.setValue('Tests');
+    component.form.formGroup.controls.email.setValue('test@test.com');
+    component.form.formGroup.controls.phone.setValue('0631234567');
+    component.form.formGroup.controls.password.setValue('12345678');
+    expect(component.form.formGroup.valid).toBeTruthy();
+  });
 });

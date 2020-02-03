@@ -29,18 +29,18 @@ export class ChangePostComponent implements OnInit {
     });
   }
 
-  getArticleDetailById(id) {
+  getArticleDetailById(id): void {
     this.articleDetail = this.articlesServise.getArticleById(parseInt(id, 10));
   }
 
-  onArticleSubmitForm(form) {
+  onArticleSubmitForm(form): void {
     if (form.valid) {
       this.articlesServise.updateArticleById(this.articleDetail);
       this.router.navigate(['/show-post']);
     }
   }
 
-  onClickCancel() {
+  onClickCancel(): void {
     this.router.navigate(['/show-post']);
   }
 }

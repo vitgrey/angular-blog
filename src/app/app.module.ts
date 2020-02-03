@@ -1,5 +1,3 @@
-import { UserFormLogin } from './forms/user-login.form';
-import { UserFormRegister } from './forms/user-register.form';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -37,9 +35,7 @@ import { AddListComponent } from './components/list/add-list/add-list.component'
     ShowListComponent,
     LoginComponent,
     RegisterComponent,
-    AddListComponent,
-    UserFormRegister,
-    UserFormLogin
+    AddListComponent
   ],
   imports: [
     BrowserModule,

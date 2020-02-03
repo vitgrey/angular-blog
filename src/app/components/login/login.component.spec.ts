@@ -53,4 +53,16 @@ describe('LoginComponent', () => {
     el.click();
     expect(component.onSubmit).toHaveBeenCalledTimes(0);
   });
+
+  it('form invalid', () => {
+    component.form.formGroup.controls.email.setValue('');
+    component.form.formGroup.controls.password.setValue('');
+    expect(component.form.formGroup.valid).toBeFalsy();
+  });
+
+  it('form valid', () => {
+    component.form.formGroup.controls.email.setValue('test@test.com');
+    component.form.formGroup.controls.password.setValue('12345678');
+    expect(component.form.formGroup.valid).toBeTruthy();
+  });
 });
