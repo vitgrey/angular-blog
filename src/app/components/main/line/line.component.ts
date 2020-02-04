@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LINE } from './line';
+import { LINE } from './line-data';
 
 @Component({
   selector: 'app-line',

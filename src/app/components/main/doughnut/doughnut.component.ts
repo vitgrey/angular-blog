@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DOUGHNUT } from './doughnut';
+import { DOUGHNUT } from './doughnut-data';
 
 @Component({
   selector: 'app-doughnut',

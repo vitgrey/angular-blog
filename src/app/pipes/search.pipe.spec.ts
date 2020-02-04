@@ -5,4 +5,8 @@ describe('SearchPipe', () => {
     const pipe = new SearchPipe();
     expect(pipe).toBeTruthy();
   });
+  it('find similar value', () => {
+    const pipe = new SearchPipe();
+    expect(pipe.transform('item')).toBe('item');
+  });
 });
