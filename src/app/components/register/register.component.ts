@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserModelRegister } from 'src/app/models/user-register.model';
 import { UserFormRegister } from 'src/app/forms/user-register.form';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user/user.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   private model: UserModelRegister;
   public form: UserFormRegister;
 
@@ -30,9 +30,6 @@ export class RegisterComponent implements OnInit {
 
   public get formGetter(): any {
     return this.form.formGroup.controls;
-  }
-
-  ngOnInit() {
   }
 
   onSubmit(): void {

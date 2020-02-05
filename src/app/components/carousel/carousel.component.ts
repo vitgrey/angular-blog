@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CAROUSEL } from './carousel-data';
+import { CarouselModelData } from './carousel-data';
 
 @Component({
   selector: 'app-carousel',
@@ -8,9 +8,9 @@ import { CAROUSEL } from './carousel-data';
 })
 export class CarouselComponent implements OnInit {
 
-  public sources = CAROUSEL;
-
-  constructor() { }
+  public sources = new CarouselModelData();
+  constructor() {
+   }
 
   ngOnInit() {
   }

@@ -11,7 +11,7 @@ import { NAVS } from './nav-data';
 })
 export class NavComponent {
 
-  currentUser: UserModel;
+  public currentUser: UserModel;
 
   public navs = NAVS;
 
