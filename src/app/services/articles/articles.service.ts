@@ -23,8 +23,7 @@ export class ArticlesService {
   getArticleById(id: number): ArticlesModel {
     const articleArray = JSON.parse(localStorage.getItem('localData'));
     return articleArray
-      .filter(article => article.id === id)
-      .pop();
+      .find(article => article.id === id);
   }
 
   updateArticleById(article): ArticlesModel {

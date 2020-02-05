@@ -7,8 +7,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
-import { ArticleChangeModule } from 'src/app/components/articles/change-post/change-post.module';
-import { ArticleShowModule } from 'src/app/components/articles/show-post/show-post.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -44,9 +42,7 @@ import { AddListComponent } from './components/list/add-list/add-list.component'
     ReactiveFormsModule,
     HttpClientModule,
     ChartsModule,
-    MDBBootstrapModule.forRoot(),
-    ArticleChangeModule,
-    ArticleShowModule
+    MDBBootstrapModule.forRoot()
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

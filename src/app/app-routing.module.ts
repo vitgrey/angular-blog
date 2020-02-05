@@ -19,12 +19,14 @@ const routes: Routes = [
   {
     path: 'show-post',
     loadChildren: () => import('./components/articles/show-post/show-post.module').then(mod => mod.ArticleShowModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    pathMatch: 'full'
   },
   {
     path: 'change-post',
     loadChildren: () => import('./components/articles/change-post/change-post.module').then(mod => mod.ArticleChangeModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    pathMatch: 'full'
   },
   { path: '**', redirectTo: '' }
 ];

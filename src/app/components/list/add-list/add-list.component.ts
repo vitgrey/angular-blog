@@ -8,14 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AddListComponent {
 
-  public inputValue: string;
-
   constructor(private messageService: MessageService) { }
 
-  public addInput(newInput: string) {
-    if (newInput) {
-      this.messageService.sendMessage(newInput);
-      console.log(newInput);
+  public addInput(inputValue: string) {
+    if (inputValue) {
+      this.messageService.sendMessage(inputValue);
     }
   }
 
