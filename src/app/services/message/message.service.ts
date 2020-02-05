@@ -5,11 +5,11 @@ import { Observable, Subject } from 'rxjs';
 export class MessageService {
     private subject = new Subject<any>();
 
-    sendMessage(message: string) {
+    sendMessage(message: string): void {
         this.subject.next({ text: message });
     }
 
-    clearMessages() {
+    clearMessages(): void {
         this.subject.next();
     }
 

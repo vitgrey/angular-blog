@@ -10,7 +10,7 @@ export class AddListComponent {
 
   constructor(private messageService: MessageService) { }
 
-  public addInput(inputValue: string) {
+  public addInput(inputValue: string): void {
     if (inputValue) {
       this.messageService.sendMessage(inputValue);
     }

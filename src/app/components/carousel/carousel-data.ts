@@ -1,4 +1,4 @@
-import { CarouselModel } from 'src/app/models/carousel';
+import { CarouselModel } from 'src/app/models/carousel.model';
 
 export const CAROUSEL: CarouselModel[] = [
   {

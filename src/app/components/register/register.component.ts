@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModelRegister } from 'src/app/models/user-register';
+import { UserModelRegister } from 'src/app/models/user-register.model';
 import { UserFormRegister } from 'src/app/forms/user-register.form';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';

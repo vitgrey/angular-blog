@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ArticlesService } from 'src/app/services/articles/articles.service';
-import { ArticlesModel } from 'src/app/models/article';
+import { ArticlesModel } from 'src/app/models/article.model';
 
 @Component({
   selector: 'app-change-post',

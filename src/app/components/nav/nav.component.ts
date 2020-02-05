@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
-import { UserModel } from 'src/app/models/user';
+import { UserModel } from 'src/app/models/user.model';
 import { NAVS } from './nav-data';
 
 @Component({
@@ -22,7 +22,7 @@ export class NavComponent {
     this.authenticationService.currentUser.subscribe(data => this.currentUser = data);
   }
 
-  logout() {
+  logout(): void {
     this.authenticationService.logout();
     this.router.navigate(['/login']);
   }

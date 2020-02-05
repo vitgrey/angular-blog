@@ -1,4 +1,4 @@
-import { NavModel } from 'src/app/models/nav';
+import { NavModel } from 'src/app/models/nav.model';
 
 export const NAVS: NavModel[] = [
   {

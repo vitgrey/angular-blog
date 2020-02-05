@@ -1,24 +1,23 @@
 <div class="wrapper">
   <form class="center text-center w-50" [formGroup]="form.formGroup" (ngSubmit)="onSubmit()">
 
-    <p class="h4 mb-4">Sign in</p>
+    <p class="h4 mb-2">Sign in</p>
 
-    <input type="email" class="form-control mb-4" placeholder="E-mail" formControlName="email">
-    <small class="form-text text-muted mb-4"
+    <input type="email" class="form-control mb-2" placeholder="E-mail" formControlName="email">
+    <small class="form-text text-muted"
       *ngIf="form.formGroup.controls['email'].invalid && form.formGroup.controls['email'].touched">required
       email</small>
-    <small class="form-text text-muted mb-4" *ngIf="formGetter.email.errors && form.formGroup.controls['email'].dirty">
+    <small class="form-text text-muted mb-2" *ngIf="formGetter.email.errors && form.formGroup.controls['email'].dirty">
       Email must be a valid email address (example@mail.com)</small>
 
-    <input type="password" class="form-control mb-4" placeholder="Password" formControlName="password">
-    <small class="form-text text-muted mb-4"
+    <input type="password" class="form-control mb-2" placeholder="Password" formControlName="password">
+    <small class="form-text text-muted"
       *ngIf="form.formGroup.controls['password'].invalid && form.formGroup.controls['password'].touched">required
       password</small>
-    <small class="form-text text-muted mb-4"
-      *ngIf="formGetter.password.errors && form.formGroup.controls['password'].dirty">
+    <small class="form-text text-muted" *ngIf="formGetter.password.errors && form.formGroup.controls['password'].dirty">
       Password must be 8 numbers</small>
 
-    <button class="btn btn-info btn-block my-4" type="submit" [disabled]="form.formGroup.invalid">Sign in</button>
+    <button class="btn btn-info btn-block my-2" type="submit" [disabled]="form.formGroup.invalid">Sign in</button>
 
     <p>Not a member?
       <a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { UserModelLogin } from 'src/app/models/user-login';
+import { UserModelLogin } from 'src/app/models/user-login.model';
 import { UserFormLogin } from 'src/app/forms/user-login.form';
 import { first } from 'rxjs/operators';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';

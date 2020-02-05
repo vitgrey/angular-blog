@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
 
-import { UserModel } from 'src/app/models/user';
+import { UserModel } from 'src/app/models/user.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -27,7 +27,7 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
-  public login(email: string, password: string) {
+  public login(email: string, password: string): any {
     return this.http.post<any>(`${environment.apiUrl}/login`, { email, password })
       .pipe(map(user => {
         if (user && user.token) {
@@ -37,7 +37,7 @@ export class AuthenticationService {
         return user;
       }));
   }
-  public logout() {
+  public logout(): void {
     this.cookie.delete('currentUser');
     this.currentUserSubject.next(null);
   }

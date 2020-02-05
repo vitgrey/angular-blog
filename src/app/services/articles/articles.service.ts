@@ -1,4 +1,4 @@
-import { ArticlesModel } from 'src/app/models/article';
+import { ArticlesModel } from 'src/app/models/article.model';
 import { Injectable } from '@angular/core';
 import { EXAMPLE } from './example-data';
 
@@ -45,7 +45,7 @@ export class ArticlesService {
     return article;
   }
 
-  deleteArticleDetail(id) {
+  deleteArticleDetail(id): void {
     const articleArray = JSON.parse(localStorage.getItem('localData'));
     for (const i in articleArray) {
       if (articleArray[i].id === id) {

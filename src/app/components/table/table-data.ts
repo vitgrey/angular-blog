@@ -1,4 +1,4 @@
-import { PeopleModel, HeaderModel } from 'src/app/models/table';
+import { PeopleModel, HeaderModel } from 'src/app/models/table.model';
 
 export const HEADERS: HeaderModel[] = [
   {

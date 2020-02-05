@@ -1,4 +1,4 @@
-import { UserModel } from './../../models/user';
+import { UserModel } from '../../models/user.model';
 import { TestBed } from '@angular/core/testing';
 import {
   HttpClientTestingModule,

@@ -1,4 +1,4 @@
-import { LineModel } from 'src/app/models/line';
+import { LineModel } from 'src/app/models/line.model';
 
 export const LINE: LineModel = {
   chartType: 'line',

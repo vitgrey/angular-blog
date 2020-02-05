@@ -1,4 +1,4 @@
-import { ListModel } from 'src/app/models/list';
+import { ListModel } from 'src/app/models/list.model';
 
 export const LIST: ListModel = {
 

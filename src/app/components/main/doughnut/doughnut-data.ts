@@ -1,4 +1,4 @@
-import { DoughnutModel } from 'src/app/models/doughnut';
+import { DoughnutModel } from 'src/app/models/doughnut.model';
 
 export const DOUGHNUT: DoughnutModel = {
 
