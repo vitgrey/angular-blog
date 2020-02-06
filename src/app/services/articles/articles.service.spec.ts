@@ -1,7 +1,7 @@
+import { ArticlesModel } from './../../models/article.model';
+import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ArticlesService } from './articles.service';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ArticlesModel } from 'src/app/models/article.model';
 
 describe('ArticlesService', () => {
 
@@ -21,46 +21,20 @@ describe('ArticlesService', () => {
     }
   ];
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [ArticlesService]
-    });
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [HttpClientTestingModule],
+    providers: [ArticlesService]
+  }));
 
-    let store = {};
-    const mockLocalStorage = {
-      getItem: (key: string): string => {
-        return key in store ? store[key] : null;
-      },
-      setItem: (key: string, value: string) => {
-        store[key] = `${value}`;
-      },
-      removeItem: (key: string) => {
-        delete store[key];
-      },
-      clear: () => {
-        store = {};
-      }
-    };
-    spyOn(localStorage, 'getItem')
-      .and.callFake(mockLocalStorage.getItem);
-    spyOn(localStorage, 'setItem')
-      .and.callFake(mockLocalStorage.setItem);
-    spyOn(localStorage, 'removeItem')
-      .and.callFake(mockLocalStorage.removeItem);
-    spyOn(localStorage, 'clear')
-      .and.callFake(mockLocalStorage.clear);
-
-
-    it('should be created', () => {
-      service = TestBed.get(ArticlesService);
-      expect(service).toBeTruthy();
-    });
-
-    it('should return `null` if it does NOT find a form matching the provided ID', () => {
-      service = TestBed.get(ArticlesService);
-      expect(service.getArticleById(10)).toBe(undefined);
-      expect(service.getArticleById(null)).toBe(undefined);
-    });
+  it('should be created', () => {
+    const serviceArticle: ArticlesService = TestBed.get(ArticlesService);
+    expect(serviceArticle).toBeTruthy();
   });
+
+  it('should return `null` if it does NOT find a form matching the provided ID', () => {
+    service = TestBed.get(ArticlesService);
+    expect(service.getArticleById(10)).toBe(undefined);
+    expect(service.getArticleById(null)).toBe(undefined);
+  });
+
 });

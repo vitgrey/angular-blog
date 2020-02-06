@@ -11,7 +11,8 @@ export class ArticlesService {
   constructor() { }
 
   getAllArticles(): ArticlesModel[] {
-    if (localStorage.getItem('localData') !== null) {
+    const factor = localStorage.getItem('localData') !== null;
+    if (factor) {
       this.articles = JSON.parse(localStorage.getItem('localData'));
     } else {
       localStorage.setItem('localData', JSON.stringify(this.example));

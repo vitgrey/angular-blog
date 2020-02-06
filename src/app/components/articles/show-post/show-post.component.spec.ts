@@ -1,4 +1,3 @@
-import { ChangePostComponent } from './../change-post/change-post.component';
 import { ArticlesService } from 'src/app/services/articles/articles.service';
 import { SearchPipe } from './../../../pipes/search.pipe';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -26,8 +25,7 @@ describe('ShowPostComponent', () => {
       ],
       declarations: [
         ShowPostComponent,
-        SearchPipe,
-        ChangePostComponent
+        SearchPipe
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [ArticlesService]
