@@ -10,43 +10,43 @@ export class ArticlesService {
 
   constructor() { }
 
-  getAllArticles(): ArticlesModel[] {
-    const factor = localStorage.getItem('localData') !== null;
+  public getAllArticles(): ArticlesModel[] {
+    const factor = localStorage.getItem('localData');
+    const getArticle = JSON.parse(localStorage.getItem('localData'));
     if (factor) {
-      this.articles = JSON.parse(localStorage.getItem('localData'));
+      this.articles = getArticle;
     } else {
       localStorage.setItem('localData', JSON.stringify(this.example));
-      this.articles = JSON.parse(localStorage.getItem('localData'));
+      this.articles = getArticle;
     }
     return this.articles;
   }
 
-  getArticleById(id: number): ArticlesModel {
+  public getArticleById(id: number): ArticlesModel {
     const articleArray = JSON.parse(localStorage.getItem('localData'));
     return articleArray
       .find(article => article.id === id);
   }
 
-  updateArticleById(article): ArticlesModel {
-    if (article.id === 0) {
-      const articleArray = JSON.parse(localStorage.getItem('localData'));
-      let articleId = articleArray.length;
+  public updateArticleById(article): ArticlesModel {
+    const articleArrayGet = JSON.parse(localStorage.getItem('localData'));
+    if (!article.id) {
+      let articleId = articleArrayGet.length;
       article.id = ++articleId;
-      articleArray.push(article);
-      localStorage.setItem('localData', JSON.stringify(articleArray));
+      articleArrayGet.push(article);
+      localStorage.setItem('localData', JSON.stringify(articleArrayGet));
     } else {
-      const articleSaveArray = JSON.parse(localStorage.getItem('localData'));
-      for (const i in articleSaveArray) {
-        if (articleSaveArray[i].id === article.id) {
-          articleSaveArray[i] = article;
-          localStorage.setItem('localData', JSON.stringify(articleSaveArray));
+      for (const i in articleArrayGet) {
+        if (articleArrayGet[i].id === article.id) {
+          articleArrayGet[i] = article;
+          localStorage.setItem('localData', JSON.stringify(articleArrayGet));
         }
       }
     }
     return article;
   }
 
-  deleteArticleDetail(id): void {
+  public deleteArticleDetail(id): void {
     const articleArray = JSON.parse(localStorage.getItem('localData'));
     for (const i in articleArray) {
       if (articleArray[i].id === id) {

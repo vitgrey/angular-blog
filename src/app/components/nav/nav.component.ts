@@ -22,7 +22,7 @@ export class NavComponent {
     this.authenticationService.currentUser.subscribe(data => this.currentUser = data);
   }
 
-  logout(): void {
+  public logout(): void {
     this.authenticationService.logout();
     this.router.navigate(['/login']);
   }

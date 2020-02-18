@@ -32,7 +32,7 @@ export class RegisterComponent {
     return this.form.formGroup.controls;
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     this.userService.register(this.form.formGroup.value)
       .pipe(first())
       .subscribe(data => this.router.navigate(['/login'])

@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     return this.form.formGroup.controls;
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     this.authenticationService.login(this.formGetter.email.value, this.formGetter.password.value)
       .pipe(first())
       .subscribe(data => this.router.navigate([this.returnUrl])
