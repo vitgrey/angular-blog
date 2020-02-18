@@ -30,8 +30,8 @@ export class ArticlesService {
 
   public updateArticleById(article): ArticlesModel {
     const articleArrayGet = JSON.parse(localStorage.getItem('localData'));
+    let articleId = articleArrayGet.length;
     if (!article.id) {
-      let articleId = articleArrayGet.length;
       article.id = ++articleId;
       articleArrayGet.push(article);
       localStorage.setItem('localData', JSON.stringify(articleArrayGet));
