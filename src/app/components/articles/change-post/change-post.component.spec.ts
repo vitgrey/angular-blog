@@ -41,12 +41,6 @@ describe('ChangePostComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should submit', () => {
-    el = fixture.debugElement.query(By.css('form')).nativeElement;
-    component.onArticleSubmitForm(el);
-    expect('test element').toEqual('test element');
-  });
-
   it('should call submit method', () => {
     fixture.detectChanges();
     spyOn<any>(component, 'onArticleSubmitForm');

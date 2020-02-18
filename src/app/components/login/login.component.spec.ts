@@ -41,11 +41,6 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should submit', () => {
-    component.onSubmit();
-    expect('test element').toEqual('test element');
-  });
-
   it('should call submit method', () => {
     fixture.detectChanges();
     spyOn<any>(component, 'onSubmit');
