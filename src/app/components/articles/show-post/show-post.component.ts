@@ -20,15 +20,11 @@ export class ShowPostComponent implements OnInit {
 
   ngOnInit() {
     this.items = this.articlesService.getAllArticles();
-    this.loadAllArticleList();
+    this.articles = this.articlesService.getAllArticles();
   }
 
   onChangePage(articles): void {
     this.articles = articles;
-  }
-
-  loadAllArticleList(): void {
-    this.articles = this.articlesService.getAllArticles();
   }
 
   onClickEditArticleDetail(id): void {
@@ -37,20 +33,16 @@ export class ShowPostComponent implements OnInit {
 
   onClickArticleDelete(id): void {
     this.articlesService.deleteArticleDetail(id);
-    this.loadAllArticleList();
+    this.articles = this.articlesService.getAllArticles();
   }
 
   onClickAddArticle(): void {
     this.router.navigate(['/change-post']);
   }
 
-  getArticleDetailById(id): void {
-    this.articleDetail = this.articlesService.getArticleById(parseInt(id, 10));
-  }
-
   onClickReadArticle(id): void {
     this.articleId = id;
-    this.getArticleDetailById(this.articleId);
+    this.articleDetail = this.articlesService.getArticleById(parseInt(this.articleId, 10));
   }
 
 }

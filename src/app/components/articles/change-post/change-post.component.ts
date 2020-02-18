@@ -19,18 +19,14 @@ export class ChangePostComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe((params: Params) => {
       this.articleId = params.id;
-      if (this.articleId !== undefined) {
-        this.getArticleDetailById(this.articleId);
+      if (this.articleId) {
+        this.articleDetail = this.articlesServise.getArticleById(parseInt(this.articleId, 10));
         this.mode = 'Edit';
       } else {
         this.articleDetail.id = 0;
         this.mode = 'Add';
       }
     });
-  }
-
-  getArticleDetailById(id): void {
-    this.articleDetail = this.articlesServise.getArticleById(parseInt(id, 10));
   }
 
   onArticleSubmitForm(form): void {
