@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { HEADERS } from './table-data';
-import { PEOPLES } from './table-data';
-
+import { TableModelData } from './table-data';
 
 @Component({
   selector: 'app-table',
@@ -9,8 +7,9 @@ import { PEOPLES } from './table-data';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
-  public headers = HEADERS;
-  public peoples = PEOPLES;
+
+  public headers = new TableModelData();
+  public peoples = new TableModelData();
 
   constructor() { }
 

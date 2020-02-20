@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DOUGHNUT } from './doughnut-data';
+import { DoughnutModelData } from './doughnut-data';
 
 @Component({
   selector: 'app-doughnut',
@@ -8,7 +8,7 @@ import { DOUGHNUT } from './doughnut-data';
 })
 export class DoughnutComponent {
 
-  public doughnut = DOUGHNUT;
+  public doughnut = new DoughnutModelData();
 
   public chartOptions: any = {
     responsive: true

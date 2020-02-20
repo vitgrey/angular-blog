@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { UserModel } from 'src/app/models/user.model';
-import { NAVS } from './nav-data';
+import { NavModelData } from './nav-data';
 
 @Component({
   selector: 'app-nav',
@@ -13,7 +13,7 @@ export class NavComponent {
 
   public currentUser: UserModel;
 
-  public navs = NAVS;
+  public nav = new NavModelData();
 
   constructor(
     private router: Router,

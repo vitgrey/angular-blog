@@ -1,11 +1,11 @@
 <table class="table">
 
   <tr class="bg-dark text-white">
-    <th *ngFor="let header of headers">{{header.title}}</th>
+    <th *ngFor="let header of headers.headers">{{header.title}}</th>
   </tr>
 
-  <tr *ngFor="let people of peoples">
-    <td *ngFor="let header of headers">
+  <tr *ngFor="let people of peoples.peoples">
+    <td *ngFor="let header of headers.headers">
       {{people[header.title]}}
     </td>
   </tr>

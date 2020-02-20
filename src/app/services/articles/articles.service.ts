@@ -1,12 +1,12 @@
 import { ArticlesModel } from 'src/app/models/article.model';
 import { Injectable } from '@angular/core';
-import { EXAMPLE } from './example-data';
+import { ArticlesModelData } from './example-data';
 
 @Injectable()
 export class ArticlesService {
 
   public articles: ArticlesModel[] = [];
-  public example = EXAMPLE;
+  public exampleArticle = new ArticlesModelData();
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class ArticlesService {
     if (factor) {
       this.articles = getArticle;
     } else {
-      localStorage.setItem('localData', JSON.stringify(this.example));
+      localStorage.setItem('localData', JSON.stringify(this.exampleArticle.article));
       this.articles = getArticle;
     }
     return this.articles;

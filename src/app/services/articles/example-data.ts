@@ -1,10 +1,11 @@
 import { ArticlesModel } from '../../models/article.model';
 
-export const EXAMPLE: ArticlesModel[] = [
-  {
-    id: 1,
-    title: 'Great Britain',
-    content: `The United Kingdom of Great Britain and Northern Ireland is situated on the British Isles.
+export class ArticlesModelData {
+  public article: ArticlesModel[] = [
+    {
+      id: 1,
+      title: 'Great Britain',
+      content: `The United Kingdom of Great Britain and Northern Ireland is situated on the British Isles.
       They lie to the north-west of Europe. The British Isles are separated from the continent by the narrow
       strait of water which is called the English Channel.
       The United Kingdom consists of four parts: England, Scotland, Wales and Northern Ireland.England,
@@ -21,6 +22,7 @@ export const EXAMPLE: ArticlesModel[] = [
       Wales is a country of lakes.
       Seas and oceans influence the British climate which is not too cold in winter but never hot in summer.
       Great Britain is a beautiful country with old traditions and good people.`,
-    source: '../../assets/third.jpeg'
-  }
-];
+      source: '../../assets/third.jpeg'
+    }
+  ];
+}

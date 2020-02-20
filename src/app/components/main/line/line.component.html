@@ -1,9 +1,9 @@
 <div style="display: block">
   <canvas baseChart mdbChart
-      [chartType]="line.chartType"
-      [datasets]="line.chartDatasets"
-      [labels]="line.chartLabels"
-      [colors]="line.chartColors"
+      [chartType]="line.line.chartType"
+      [datasets]="line.line.chartDatasets"
+      [labels]="line.line.chartLabels"
+      [colors]="line.line.chartColors"
       [options]="chartOptions"
       [legend]="true"
       (chartHover)="chartHovered($event)"

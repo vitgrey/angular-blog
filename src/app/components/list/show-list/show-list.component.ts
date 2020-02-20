@@ -1,7 +1,7 @@
 import { MessageService } from './../../../services/message/message.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { LIST } from './show-list-data';
+import { ListModelData } from './show-list-data';
 
 @Component({
   selector: 'app-list',
@@ -11,11 +11,11 @@ import { LIST } from './show-list-data';
 export class ShowListComponent implements OnDestroy, OnInit {
 
   public list: any[] = [];
-  public defaultItems = LIST;
+  public defaultItems = new ListModelData();
   public subscription: Subscription;
 
   ngOnInit() {
-    this.list.push(this.defaultItems);
+    this.list.push(this.defaultItems.list);
   }
 
   constructor(private messageService: MessageService) {

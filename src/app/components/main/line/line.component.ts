@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LINE } from './line-data';
+import { LineModelData } from './line-data';
 
 @Component({
   selector: 'app-line',
@@ -8,7 +8,7 @@ import { LINE } from './line-data';
 })
 export class LineComponent {
 
-  public line = LINE;
+  public line = new LineModelData();
 
   public chartOptions: any = {
     responsive: true
